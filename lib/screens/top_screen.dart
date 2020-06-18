@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ametama/constants.dart';
 import 'package:ametama/widgets/digit_box.dart';
+import 'package:ametama/widgets/digit_button.dart';
+import 'package:ametama/widgets/icon_button.dart';
 
 class TopScreen extends StatelessWidget {
   @override
@@ -60,12 +61,18 @@ class TopScreen extends StatelessWidget {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.stretch,
                         children: <Widget>[
-                          IconButton(
+                          FlatIconButton(
                             iconData: Icons.check,
+                            onPressed: () {
+                              print('icon tapped');
+                            },
                           ),
                           DigitButton(digit: 0),
-                          IconButton(
+                          FlatIconButton(
                             iconData: Icons.clear,
+                            onPressed: () {
+                              print('icon tapped');
+                            },
                           ),
                         ],
                       ),
@@ -73,72 +80,6 @@ class TopScreen extends StatelessWidget {
                   ],
                 )),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class DigitButton extends StatelessWidget {
-  final int digit;
-
-  DigitButton({this.digit});
-
-  @override
-  Widget build(BuildContext context) {
-    return Flexible(
-      child: ButtonTheme(
-        minWidth: double.infinity,
-        child: FlatButton(
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          color: kMyLightYellow,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0),
-            side: BorderSide(
-                color: Colors.white, width: 1, style: BorderStyle.solid),
-          ),
-          onPressed: () {
-            print('$digit');
-          },
-          child: Text(
-            '$digit',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: MediaQuery.of(context).size.height * 0.06,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class IconButton extends StatelessWidget {
-  final IconData iconData;
-
-  IconButton({this.iconData});
-
-  @override
-  Widget build(BuildContext context) {
-    return Flexible(
-      child: ButtonTheme(
-        minWidth: double.infinity,
-        child: FlatButton(
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          color: kMyDarkYellow,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0),
-            side: BorderSide(
-                color: Colors.white, width: 1, style: BorderStyle.solid),
-          ),
-          onPressed: () {
-            print('icon button tapped');
-          },
-          child: Icon(
-            iconData,
-            color: Colors.white,
-            size: MediaQuery.of(context).size.height * 0.06,
-          ),
         ),
       ),
     );
