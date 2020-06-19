@@ -1,5 +1,7 @@
+import 'package:ametama/models/date_data.dart';
 import 'package:flutter/material.dart';
 import 'package:ametama/constants.dart';
+import 'package:provider/provider.dart';
 
 class DigitButton extends StatelessWidget {
   final int digit;
@@ -13,14 +15,14 @@ class DigitButton extends StatelessWidget {
         minWidth: double.infinity,
         child: FlatButton(
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          color: kMyLightYellow,
+          color: kLightYellow,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
             side: BorderSide(
                 color: Colors.white, width: 1, style: BorderStyle.solid),
           ),
           onPressed: () {
-            print(digit);
+            Provider.of<DateData>(context, listen: false).changeDigit(digit);
           },
           child: Text(
             '$digit',

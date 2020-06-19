@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:ametama/constants.dart';
 
 class DigitBox extends StatelessWidget {
-  final int digit;
+  final String digitString;
 
-  DigitBox(this.digit);
+  DigitBox({this.digitString});
 
   @override
   Widget build(BuildContext context) {
@@ -21,12 +21,12 @@ class DigitBox extends StatelessWidget {
         ),
         child: Center(
           child: Text(
-            '$digit',
+            '$digitString',
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: screenWidth * 0.18,
               fontWeight: FontWeight.bold,
-              color: kMyDarkYellow,
+              color: kDarkYellow,
             ),
           ),
         ),

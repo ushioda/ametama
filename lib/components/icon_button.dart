@@ -14,7 +14,7 @@ class FlatIconButton extends StatelessWidget {
         minWidth: double.infinity,
         child: FlatButton(
           materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          color: kMyDarkYellow,
+          color: kDarkYellow,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
             side: BorderSide(
