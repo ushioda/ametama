@@ -1,6 +1,8 @@
+import 'package:ametama/models/date_data.dart';
 import 'package:flutter/material.dart';
 import 'package:ametama/modules/julian_display.dart';
 import 'package:ametama/modules/keypad.dart';
+import 'package:provider/provider.dart';
 
 class TopScreen extends StatelessWidget {
   @override
@@ -16,7 +18,14 @@ class TopScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 7,
-              child: Container(),
+              child: Consumer<DateData>(
+                builder: (context, dateData, child) {
+                  return Text(
+                    dateData.packedDate.toString(),
+                    style: TextStyle(fontSize: 30),
+                  );
+                },
+              ),
             ),
             Expanded(
               flex: 8,

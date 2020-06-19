@@ -1,12 +1,13 @@
 import 'dart:collection';
 import 'package:flutter/foundation.dart';
+import 'package:ametama/models/date_converter.dart';
 
 class DateData extends ChangeNotifier {
   final Map<int, String> _digits = {0: '_', 1: '_', 2: '_'};
   int _focusDigit = 0;
   int _julianDate;
   bool _dateError = false;
-  final now = DateTime.now();
+  DateTime _packedDate;
 
 //  the last julian date last year. 366 if leap year.
   final int _julianEnd = (DateTime.now().year / 4 == 1) ? 366 : 365;
@@ -14,6 +15,7 @@ class DateData extends ChangeNotifier {
   UnmodifiableMapView get digits => UnmodifiableMapView(_digits);
   bool get dateError => _dateError;
   int get julianEnd => _julianEnd;
+  DateTime get packedDate => _packedDate;
 
 //  enter digit into digit box and move on to next digit box
   void changeDigit(int newNumber) {
@@ -57,6 +59,11 @@ class DateData extends ChangeNotifier {
     if ((_julianDate > _julianEnd) | (_julianDate < 1)) {
       _dateError = true;
     }
+    notifyListeners();
+  }
+
+  void updatePackedDate() {
+    _packedDate = DateConverter().julianToDateTime(_julianDate);
     notifyListeners();
   }
 }

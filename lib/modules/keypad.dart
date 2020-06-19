@@ -53,6 +53,9 @@ class KeyPad extends StatelessWidget {
                       dateData.updateJulianDate();
                       dateData.checkJulianDate();
                     }
+                    if (!dateData.dateError) {
+                      dateData.updatePackedDate();
+                    }
                   },
                 );
               }),
