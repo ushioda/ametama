@@ -48,13 +48,11 @@ class KeyPad extends StatelessWidget {
                 return FlatIconButton(
                   iconData: Icons.check,
                   onPressed: () {
-                    dateData.checkBlankDigit();
-                    if (!dateData.dateError) {
-                      dateData.updateJulianDate();
-                      dateData.checkJulianDate();
-                    }
-                    if (!dateData.dateError) {
-                      dateData.updatePackedDate();
+                    dateData.updateDates();
+                    if (dateData.dateError) {
+                      dateData.resetDigitsWithError();
+                    } else {
+                      dateData.resetDigits();
                     }
                   },
                 );

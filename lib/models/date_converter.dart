@@ -10,4 +10,14 @@ class DateConverter {
 
     return dateThisYear.isBefore(now) ? dateThisYear : dateLastYear;
   }
+
+  String julianToString(int julianDate) {
+    if (julianDate < 10) {
+      return '00$julianDate';
+    } else if (julianDate < 99) {
+      return '0$julianDate';
+    } else {
+      return '$julianDate';
+    }
+  }
 }
