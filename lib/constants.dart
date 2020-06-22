@@ -10,4 +10,5 @@ const String kNotoSansJP = 'NotoSansJP';
 const String kKosugiMaru = 'KosugiMaru';
 
 const double kResultDisplayNumberSize1 = 30.0;
+const double kResultDisplayNumberSize2 = 25.0;
 const double kResultDisplayFontSize = 20.0;
