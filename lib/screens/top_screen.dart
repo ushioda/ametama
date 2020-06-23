@@ -20,26 +20,48 @@ class TopScreen extends StatelessWidget {
               flex: 7,
               child: Column(
                 children: <Widget>[
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text(
-                        'パック日',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: kKosugiMaru,
-                          color: kDarkYellow,
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        Expanded(flex: kFlexRatio1, child: Container()),
+                        Expanded(
+                          flex: kFlexRatio2,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: <Widget>[
+                              Expanded(
+                                child: Center(
+                                  child: Text(
+                                    'ひろみの日',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: kFontSize2,
+                                      fontFamily: kKosugiMaru,
+                                      color: kDarkYellow,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: Center(
+                                  child: Text(
+                                    '消費期限',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: kFontSize2,
+                                      fontFamily: kKosugiMaru,
+                                      color: kDarkYellow,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      Text(
-                        '消費期限',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: kKosugiMaru,
-                          color: kDarkYellow,
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   ResultDisplay(),
                 ],
