@@ -5,9 +5,7 @@ import 'package:flutter/foundation.dart';
 class DateData extends ChangeNotifier {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
   final Map<int, String> _digits = {0: '_', 1: '_', 2: '_'};
-  List<int> _julianList = [
-    170,
-  ];
+  List<int> _julianList = [];
 
   int _focusDigit = 0;
   int _julianDate;

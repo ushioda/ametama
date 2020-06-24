@@ -9,7 +9,13 @@ class ResultDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Padding(
+        Container(
+          decoration: BoxDecoration(
+              border: Border(
+                  bottom: BorderSide(
+            color: kLightYellow,
+            width: 2.0,
+          ))),
           padding: const EdgeInsets.all(8.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -50,6 +56,7 @@ class ResultDisplay extends StatelessWidget {
             ],
           ),
         ),
+        AnimatedDateList(),
       ],
     );
   }
@@ -65,20 +72,22 @@ class _AnimatedDateListState extends State<AnimatedDateList> {
   Widget build(BuildContext context) {
     return Consumer<DateData>(
       builder: (context, dateData, child) {
-        return AnimatedList(
-            initialItemCount: dateData.julianList.length,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            key: dateData.listKey,
-            itemBuilder: (context, index, animation) {
-              return SizeTransition(
-                sizeFactor: animation,
-                child: DateCard(
-                  julianDate: dateData.julianList[index],
-                  daysFromPackToExpiration: dateData.daysFromPackToExpiration,
-                ),
-              );
-            });
+        return Expanded(
+          child: AnimatedList(
+              initialItemCount: dateData.julianList.length,
+              scrollDirection: Axis.vertical,
+              shrinkWrap: true,
+              key: dateData.listKey,
+              itemBuilder: (context, index, animation) {
+                return SizeTransition(
+                  sizeFactor: animation,
+                  child: DateCard(
+                    julianDate: dateData.julianList[index],
+                    daysFromPackToExpiration: dateData.daysFromPackToExpiration,
+                  ),
+                );
+              }),
+        );
       },
     );
   }

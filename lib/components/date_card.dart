@@ -21,9 +21,10 @@ class DateCard extends StatelessWidget {
 
     return Container(
       decoration: BoxDecoration(
-          border: Border.symmetric(
-        vertical: BorderSide(color: Colors.white, width: 2.0),
-      )),
+          color: Colors.white,
+          border: Border(
+            bottom: BorderSide(color: kLightYellow, width: 2.0),
+          )),
       padding: const EdgeInsets.all(8.0),
       child: Row(
         children: <Widget>[
