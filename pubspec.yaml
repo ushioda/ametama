@@ -50,12 +50,4 @@ flutter:
    - family: KosugiMaru
      fonts:
        - asset: fonts/KosugiMaru-Regular.ttf
-   - family: NotoSansJP
-     fonts:
-       - asset: fonts/NotoSansJP-Regular.otf
-       - asset: fonts/NotoSansJP-Black.otf
-       - asset: fonts/NotoSansJP-Bold.otf
-       - asset: fonts/NotoSansJP-Light.otf
-       - asset: fonts/NotoSansJP-Medium.otf
-       - asset: fonts/NotoSansJP-Thin.otf
 

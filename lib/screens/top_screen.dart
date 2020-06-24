@@ -2,6 +2,7 @@ import 'package:ametama/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:ametama/modules/julian_display.dart';
 import 'package:ametama/modules/keypad.dart';
+import 'package:ametama/modules/result_header.dart';
 import 'package:ametama/modules/result_display.dart';
 
 class TopScreen extends StatelessWidget {
@@ -20,7 +21,15 @@ class TopScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            JulianDisplay(),
+            Container(
+              color: kLightYellow,
+              child: Column(
+                children: <Widget>[
+                  JulianDisplay(),
+                  ResultHeader(),
+                ],
+              ),
+            ),
             Expanded(
               flex: 8,
               child: ResultDisplay(),

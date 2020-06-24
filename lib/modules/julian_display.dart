@@ -8,8 +8,7 @@ class JulianDisplay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<DateData>(
-      builder: (context, dateData, child) => Container(
-        color: kLightYellow,
+      builder: (context, dateData, child) => Padding(
         padding: EdgeInsets.only(top: 16, left: 8, right: 8),
         child: Column(
           children: <Widget>[
@@ -17,7 +16,9 @@ class JulianDisplay extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 DigitBox(digitString: dateData.digits[0]),
+                SizedBox(width: kBasicBorderWidth),
                 DigitBox(digitString: dateData.digits[1]),
+                SizedBox(width: kBasicBorderWidth),
                 DigitBox(digitString: dateData.digits[2]),
               ],
             ),

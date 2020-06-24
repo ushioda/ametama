@@ -9,68 +9,6 @@ class ResultDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-              color: kLightYellow,
-              border: Border(
-                  bottom: BorderSide(
-                color: kLightYellow,
-                width: 2.0,
-              ))),
-          padding: EdgeInsets.only(bottom: 12, left: 8, right: 8),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Expanded(
-                flex: kFlexRatio1,
-                child: Container(
-                  child: GestureDetector(
-                      child: Icon(
-                        Icons.delete_sweep,
-                        color: kResultDisplayHeaderTextColor,
-                        size: kFontSize1,
-                      ),
-                      onTap: () {
-                        Provider.of<DateData>(context, listen: false)
-                            .removeAll();
-                      }),
-                ),
-              ),
-              Expanded(
-                flex: kFlexRatio2,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Expanded(
-                      child: Center(
-                        child: Text(
-                          'パック日',
-                          style: TextStyle(
-                            fontSize: kResultDisplayHeaderFontSize,
-                            fontFamily: kKosugiMaru,
-                            color: kResultDisplayHeaderTextColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                    Expanded(
-                      child: Center(
-                        child: Text(
-                          '消費期限',
-                          style: TextStyle(
-                            fontSize: kResultDisplayHeaderFontSize,
-                            fontFamily: kKosugiMaru,
-                            color: kResultDisplayHeaderTextColor,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
         AnimatedDateList(),
       ],
     );
