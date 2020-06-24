@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 
 class DateData extends ChangeNotifier {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
-  final Map<int, String> _digits = {0: '_', 1: '_', 2: '_'};
+  final Map<int, String> _digits = {0: '', 1: '', 2: ''};
   List<int> _julianList = [];
 
   int _focusDigit = 0;
@@ -40,7 +40,7 @@ class DateData extends ChangeNotifier {
   /// empty up julian display and reset error
   void resetDigits() {
     for (var i = 0; i < _digits.length; i++) {
-      _digits[i] = '_';
+      _digits[i] = '';
     }
     _focusDigit = 0;
     _dateError = false;
@@ -50,7 +50,7 @@ class DateData extends ChangeNotifier {
   /// empty up julian display without changing state of error
   void resetDigitsWithError() {
     for (var i = 0; i < _digits.length; i++) {
-      _digits[i] = '_';
+      _digits[i] = '';
     }
     _focusDigit = 0;
     notifyListeners();
@@ -60,7 +60,7 @@ class DateData extends ChangeNotifier {
   void updateDate() {
     /// check if there are any blank digits
     for (var i = 0; i < _digits.length; i++) {
-      if (_digits[i] == '_') {
+      if (_digits[i] == '') {
         _dateError = true;
       }
     }
@@ -86,5 +86,19 @@ class DateData extends ChangeNotifier {
     _listKey.currentState.insertItem(0);
     _julianDate = 0;
     notifyListeners();
+  }
+
+  void removeJulian(int _selectedInt) {
+    _listKey.currentState.removeItem(_selectedInt, (_, __) => Container());
+    _julianList.removeAt(_selectedInt);
+    notifyListeners();
+  }
+
+  void removeAll() {
+    int listLength = _julianList.length;
+    for (int i = 0; i < listLength; i++) {
+      _listKey.currentState.removeItem(0, (_, __) => Container());
+      _julianList.removeAt(0);
+    }
   }
 }

@@ -33,7 +33,7 @@ class DateCard extends StatelessWidget {
             child: Icon(
               Icons.calendar_today,
               color: kDarkYellow,
-              size: 35,
+              size: kFontSize1,
             ),
           ),
           Expanded(

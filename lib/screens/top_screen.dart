@@ -9,19 +9,24 @@ class TopScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackGround,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: kDarkYellow,
+        title: Text(
+          'あめたま',
+          style: TextStyle(fontFamily: kKosugiMaru),
+        ),
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
+            JulianDisplay(),
             Expanded(
-              flex: 5,
-              child: JulianDisplay(),
-            ),
-            Expanded(
-              flex: 7,
+              flex: 8,
               child: ResultDisplay(),
             ),
             Expanded(
-              flex: 8,
+              flex: 7,
               child: KeyPad(),
             ),
           ],

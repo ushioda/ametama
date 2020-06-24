@@ -11,23 +11,20 @@ class DigitBox extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
-      height: screenWidth * 0.27,
-      width: screenWidth * 0.27,
-      child: Card(
-        color: Colors.white,
-        elevation: 5.0,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(screenWidth * 0.08),
-        ),
-        child: Center(
-          child: Text(
-            '$digitString',
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: screenWidth * 0.18,
-              fontWeight: FontWeight.bold,
-              color: kDarkYellow,
-            ),
+      height: screenWidth * kDigitBoxSizeRatio,
+      width: screenWidth * kDigitBoxSizeRatio,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(8)),
+          border: Border.all(color: kLightYellow, width: 2.0)),
+      child: Center(
+        child: Text(
+          '$digitString',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: screenWidth * 0.18,
+//            fontWeight: FontWeight.bold,
+            color: kDarkYellow,
           ),
         ),
       ),
