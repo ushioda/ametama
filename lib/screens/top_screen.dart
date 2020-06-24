@@ -18,54 +18,7 @@ class TopScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 7,
-              child: Column(
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: <Widget>[
-                        Expanded(flex: kFlexRatio1, child: Container()),
-                        Expanded(
-                          flex: kFlexRatio2,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: <Widget>[
-                              Expanded(
-                                child: Center(
-                                  child: Text(
-                                    'ひろみの日',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: kFontSize2,
-                                      fontFamily: kKosugiMaru,
-                                      color: kDarkYellow,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Center(
-                                  child: Text(
-                                    '消費期限',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: kFontSize2,
-                                      fontFamily: kKosugiMaru,
-                                      color: kDarkYellow,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  ResultDisplay(),
-                ],
-              ),
+              child: ResultDisplay(),
             ),
             Expanded(
               flex: 8,

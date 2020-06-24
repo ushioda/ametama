@@ -7,7 +7,6 @@ class DateConverter {
         beginningOfThisYear.add(Duration(days: (julianDate - 1)));
     DateTime dateLastYear =
         beginningOfLastYear.add(Duration(days: (julianDate - 1)));
-
     return dateThisYear.isBefore(now) ? dateThisYear : dateLastYear;
   }
 
