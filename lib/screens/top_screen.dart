@@ -17,6 +17,17 @@ class TopScreen extends StatelessWidget {
           'あめたま',
           style: TextStyle(fontFamily: kKosugiMaru),
         ),
+        actions: <Widget>[
+          GestureDetector(
+            child: Icon(
+              Icons.info_outline,
+              color: Colors.white,
+            ),
+            onTap: () {
+              print('info tapped');
+            },
+          )
+        ],
       ),
       body: SafeArea(
         child: Column(
