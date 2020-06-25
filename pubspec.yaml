@@ -50,4 +50,6 @@ flutter:
    - family: KosugiMaru
      fonts:
        - asset: fonts/KosugiMaru-Regular.ttf
-
+   - family: MyFlutterApp
+     fonts:
+       - asset: fonts/MyFlutterApp.ttf

@@ -18,7 +18,7 @@ const double kBasicBorderWidth = 3.0;
 
 const double kDigitBoxSizeRatio = 0.22;
 const double kDigitToBoxSizeRatio = 0.62;
-const double kButtonFontSizeRatio = 0.05;
+const double kButtonFontSizeRatio = 0.04;
 const double kIconToFontRatio = 1.35;
 
 const int kFlexRatio1 = 4;

@@ -43,15 +43,42 @@ class ResultHeader extends StatelessWidget {
                   ),
                 ),
                 Expanded(
-                  child: Center(
-                    child: Text(
-                      '消費期限',
-                      style: TextStyle(
-                        fontSize: kResultDisplayHeaderFontSize,
-                        fontFamily: kKosugiMaru,
-                        color: kResultDisplayHeaderTextColor,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      GestureDetector(
+                        onTap: () {
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return Column(
+                                  children: <Widget>[
+                                    Text('卵がパックされた日から消費期限までの日そしてひろみちゃんがすきです数')
+                                  ],
+                                );
+                              });
+                          print('expiration date tapped');
+                        },
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              '消費期限',
+                              style: TextStyle(
+                                fontSize: kResultDisplayHeaderFontSize,
+                                fontFamily: kKosugiMaru,
+                                color: kResultDisplayHeaderTextColor,
+                              ),
+                            ),
+                            SizedBox(width: 3.0),
+                            Icon(
+                              Icons.settings,
+                              color: Colors.white,
+                              size: kResultDisplayHeaderFontSize,
+                            )
+                          ],
+                        ),
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ],

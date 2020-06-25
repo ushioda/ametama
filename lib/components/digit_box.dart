@@ -18,22 +18,14 @@ class DigitBox extends StatelessWidget {
         borderRadius: BorderRadius.all(Radius.circular(8)),
       ),
       child: Center(
-        child: Column(
-          children: <Widget>[
-            SizedBox(
-              height: screenWidth * kDigitBoxSizeRatio * 0.11,
-            ),
-            Text(
-              '$digitString',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                fontSize:
-                    screenWidth * kDigitBoxSizeRatio * kDigitToBoxSizeRatio,
+        child: Text(
+          '$digitString',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: screenWidth * kDigitBoxSizeRatio * kDigitToBoxSizeRatio,
 //            fontWeight: FontWeight.bold,
-                color: kDarkYellow,
-              ),
-            ),
-          ],
+            color: kDarkYellow,
+          ),
         ),
       ),
     );

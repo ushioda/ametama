@@ -47,6 +47,13 @@ class KeyPad extends StatelessWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                FlatIconButton(
+                  iconData: Icons.clear,
+                  onPressed: () {
+                    Provider.of<DateData>(context, listen: false).resetDigits();
+                  },
+                ),
+                DigitButton(digit: 0),
                 Consumer<DateData>(builder: (context, dateData, child) {
                   return FlatIconButton(
                     iconData: Icons.check,
@@ -61,13 +68,6 @@ class KeyPad extends StatelessWidget {
                     },
                   );
                 }),
-                DigitButton(digit: 0),
-                FlatIconButton(
-                  iconData: Icons.clear,
-                  onPressed: () {
-                    Provider.of<DateData>(context, listen: false).resetDigits();
-                  },
-                ),
               ],
             ),
           ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ametama/models/date_converter.dart';
 import 'package:ametama/constants.dart';
+import 'package:ametama/assets/egg.dart';
 
 class DateCard extends StatelessWidget {
   final int julianDate;
@@ -31,9 +32,9 @@ class DateCard extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Icon(
-              Icons.calendar_today,
+              MyFlutterApp.eggs,
               color: kDarkYellow,
-              size: kFontSize2 * kIconToFontRatio,
+              size: 35 * kIconToFontRatio,
             ),
           ),
           Expanded(

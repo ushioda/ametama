@@ -1,5 +1,6 @@
-import 'package:ametama/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:ametama/screens/info_screen.dart';
+import 'package:ametama/constants.dart';
 import 'package:ametama/modules/julian_display.dart';
 import 'package:ametama/modules/keypad.dart';
 import 'package:ametama/modules/result_header.dart';
@@ -19,12 +20,19 @@ class TopScreen extends StatelessWidget {
         ),
         actions: <Widget>[
           GestureDetector(
-            child: Icon(
-              Icons.info_outline,
-              color: Colors.white,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12.0),
+              child: Icon(
+                Icons.info_outline,
+                color: Colors.white,
+                size: 30,
+              ),
             ),
             onTap: () {
-              print('info tapped');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => InfoScreen()),
+              );
             },
           )
         ],
