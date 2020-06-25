@@ -53,8 +53,7 @@ class _AnimatedDateListState extends State<AnimatedDateList> {
                     sizeFactor: animation,
                     child: DateCard(
                       julianDate: dateData.julianList[index],
-                      daysFromPackToExpiration:
-                          dateData.daysFromPackToExpiration,
+                      daysFromPackToExpiration: dateData.eggDuration,
                     ),
                   ),
                 );

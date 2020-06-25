@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ametama/constants.dart';
 import 'package:ametama/models/date_data.dart';
+import 'package:ametama/modules/bottom_sheet.dart';
 import 'package:provider/provider.dart';
 
 class ResultHeader extends StatelessWidget {
@@ -49,15 +50,25 @@ class ResultHeader extends StatelessWidget {
                       GestureDetector(
                         onTap: () {
                           showModalBottomSheet(
+                              isScrollControlled: true,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.vertical(
+                                  top: Radius.circular(8.0),
+                                ),
+                              ),
                               context: context,
                               builder: (context) {
-                                return Column(
-                                  children: <Widget>[
-                                    Text('卵がパックされた日から消費期限までの日そしてひろみちゃんがすきです数')
-                                  ],
+                                return SingleChildScrollView(
+                                  child: Container(
+                                    padding: EdgeInsets.all(16.0),
+                                    child: DurationSelector(
+                                      eggDurationInitial:
+                                          Provider.of<DateData>(context)
+                                              .eggDuration,
+                                    ),
+                                  ),
                                 );
                               });
-                          print('expiration date tapped');
                         },
                         child: Row(
                           children: <Widget>[

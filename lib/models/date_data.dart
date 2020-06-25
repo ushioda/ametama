@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'package:ametama/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 
@@ -9,7 +10,7 @@ class DateData extends ChangeNotifier {
 
   int _focusDigit = 0;
   int _julianDate;
-  int _daysFromPackToExpiration = 14;
+  int _eggDuration = kEggDurationInitial;
   bool _dateError = false;
 
   /// the last julian date last year. 366 if leap year.
@@ -21,7 +22,7 @@ class DateData extends ChangeNotifier {
 
   int get julianDate => _julianDate;
 
-  int get daysFromPackToExpiration => _daysFromPackToExpiration;
+  int get eggDuration => _eggDuration;
 
   bool get dateError => _dateError;
 
@@ -100,5 +101,10 @@ class DateData extends ChangeNotifier {
       _listKey.currentState.removeItem(0, (_, __) => Container());
       _julianList.removeAt(0);
     }
+  }
+
+  void updateEggDuration(int newValue) {
+    _eggDuration = newValue;
+    notifyListeners();
   }
 }
