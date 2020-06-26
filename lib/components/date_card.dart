@@ -33,7 +33,9 @@ class DateCard extends StatelessWidget {
             flex: 4,
             child: Icon(
               MyFlutterApp.eggs,
-              color: kDarkYellow,
+              color: _daysUntilExpiration < 0
+                  ? Colors.redAccent
+                  : Colors.blueAccent,
               size: 35 * kIconToFontRatio,
             ),
           ),
