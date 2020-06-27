@@ -2,15 +2,20 @@ import 'dart:collection';
 import 'package:ametama/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DateData extends ChangeNotifier {
+  DateData() {
+    retrieveEggDuration();
+  }
+
   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
   final Map<int, String> _digits = {0: '', 1: '', 2: ''};
   List<int> _julianList = [];
 
   int _focusDigit = 0;
   int _julianDate;
-  int _eggDuration = kEggDurationInitial;
+  int _eggDuration;
   bool _dateError = false;
 
   /// the last julian date last year. 366 if leap year.
@@ -82,6 +87,7 @@ class DateData extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// add julian date to julian list
   void addJulian() {
     _julianList.insert(0, _julianDate);
     _listKey.currentState.insertItem(0);
@@ -89,12 +95,14 @@ class DateData extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// remove selected julian date from list; no animation for dismissible widget
   void removeJulian(int _selectedInt) {
     _listKey.currentState.removeItem(_selectedInt, (_, __) => Container());
     _julianList.removeAt(_selectedInt);
     notifyListeners();
   }
 
+  /// remove all dates from julian list
   void removeAll() {
     int listLength = _julianList.length;
     for (int i = 0; i < listLength; i++) {
@@ -103,8 +111,26 @@ class DateData extends ChangeNotifier {
     }
   }
 
+  /// update egg duration
   void updateEggDuration(int newValue) {
     _eggDuration = newValue;
     notifyListeners();
+  }
+
+  /// set egg duration to user preference initially
+  void retrieveEggDuration() async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    int initialEggDuration =
+        preferences.getInt(kSharedPreferencesKey) ?? kInitialEggDuration;
+    _eggDuration = initialEggDuration;
+    notifyListeners();
+  }
+
+  /// save duration to shared preference
+  void saveDurationPreference(int duration) async {
+    SharedPreferences preferences = await SharedPreferences.getInstance();
+    await preferences
+        .setInt(kSharedPreferencesKey, duration)
+        .then((bool success) => duration);
   }
 }

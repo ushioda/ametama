@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-const int kEggDurationInitial = 14;
+const int kInitialEggDuration = 14;
+const String kSharedPreferencesKey = 'eggDuration';
 
 const Color kDarkYellow = Color(0xffFF8F00);
 const Color kLightYellow = Color(0xffFFB300);

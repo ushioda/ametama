@@ -71,7 +71,7 @@ class _DurationSelectorState extends State<DurationSelector> {
                   ),
                   onPressed: () {
                     setState(() {
-                      _eggDuration = kEggDurationInitial;
+                      _eggDuration = kInitialEggDuration;
                     });
                   }),
             )
@@ -96,6 +96,8 @@ class _DurationSelectorState extends State<DurationSelector> {
             onPressed: () {
               Provider.of<DateData>(context, listen: false)
                   .updateEggDuration(_eggDuration);
+              Provider.of<DateData>(context, listen: false)
+                  .saveDurationPreference(_eggDuration);
               Navigator.pop(context);
             },
             color: kDarkYellow,

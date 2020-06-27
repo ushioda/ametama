@@ -5,16 +5,14 @@ import 'package:ametama/assets/egg.dart';
 
 class DateCard extends StatelessWidget {
   final int julianDate;
-  final int daysFromPackToExpiration;
+  final int eggDuration;
 
-  DateCard(
-      {@required this.julianDate, @required this.daysFromPackToExpiration});
+  DateCard({@required this.julianDate, @required this.eggDuration});
 
   @override
   Widget build(BuildContext context) {
     DateTime _packedDate = DateConverter().julianToDateTime(julianDate);
-    DateTime _expirationDate =
-        _packedDate.add(Duration(days: daysFromPackToExpiration));
+    DateTime _expirationDate = _packedDate.add(Duration(days: eggDuration));
     DateTime _now = DateTime.now();
     DateTime _todayMidnight = DateTime(_now.year, _now.month, _now.day);
     int _daysUntilExpiration =
