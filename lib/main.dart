@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:ametama/models/date_data.dart';
 import 'package:ametama/screens/top_screen.dart';
-import 'package:ametama/constants.dart';
 
 void main() => runApp(MyApp());
 
