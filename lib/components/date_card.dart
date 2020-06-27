@@ -1,3 +1,4 @@
+import 'package:ametama/assets/chick_in_egg_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:ametama/models/date_converter.dart';
 import 'package:ametama/constants.dart';
@@ -30,11 +31,12 @@ class DateCard extends StatelessWidget {
           Expanded(
             flex: 4,
             child: Icon(
-              MyFlutterApp.eggs,
-              color: _daysUntilExpiration < 0
-                  ? Colors.redAccent
-                  : Colors.blueAccent,
-              size: 35 * kIconToFontRatio,
+              ChickInEgg.chick_egg,
+              color: kBasicTextColor,
+//              _daysUntilExpiration < 0
+//                  ? Colors.redAccent
+//                  : Colors.blueAccent,
+              size: 30 * kIconToFontRatio,
             ),
           ),
           Expanded(
@@ -56,7 +58,7 @@ class DateCard extends StatelessWidget {
                             _packedDate.month.toString(),
                             style: TextStyle(
                               fontSize: kFontSize1,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                           SizedBox(width: 1),
@@ -65,14 +67,14 @@ class DateCard extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: kFontSize3,
                                 fontFamily: kKosugiMaru,
-                                color: kDarkYellow),
+                                color: kBasicTextColor),
                           ),
                           SizedBox(width: 2),
                           Text(
                             _packedDate.day.toString(),
                             style: TextStyle(
                               fontSize: kFontSize1,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                           SizedBox(width: 1),
@@ -81,7 +83,7 @@ class DateCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: kFontSize3,
                               fontFamily: kKosugiMaru,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                         ],
@@ -99,7 +101,7 @@ class DateCard extends StatelessWidget {
                             _expirationDate.month.toString(),
                             style: TextStyle(
                               fontSize: kFontSize1,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                           SizedBox(width: 1),
@@ -108,14 +110,14 @@ class DateCard extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: kFontSize3,
                                 fontFamily: kKosugiMaru,
-                                color: kDarkYellow),
+                                color: kBasicTextColor),
                           ),
                           SizedBox(width: 2),
                           Text(
                             _expirationDate.day.toString(),
                             style: TextStyle(
                               fontSize: kFontSize1,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                           SizedBox(width: 1),
@@ -124,7 +126,7 @@ class DateCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: kFontSize3,
                               fontFamily: kKosugiMaru,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                         ],
@@ -151,14 +153,14 @@ class DateCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: kFontSize2,
                               fontFamily: kKosugiMaru,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                           Text(
                             '$julianDate',
                             style: TextStyle(
                               fontSize: kFontSize2,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                           Text(
@@ -166,7 +168,7 @@ class DateCard extends StatelessWidget {
                             style: TextStyle(
                               fontSize: kFontSize2,
                               fontFamily: kKosugiMaru,
-                              color: kDarkYellow,
+                              color: kBasicTextColor,
                             ),
                           ),
                         ],

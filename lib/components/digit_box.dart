@@ -24,7 +24,7 @@ class DigitBox extends StatelessWidget {
           style: TextStyle(
             fontSize: screenWidth * kDigitBoxSizeRatio * kDigitToBoxSizeRatio,
 //            fontWeight: FontWeight.bold,
-            color: kDarkYellow,
+            color: kBasicTextColor,
           ),
         ),
       ),

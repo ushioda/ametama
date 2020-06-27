@@ -54,3 +54,7 @@ flutter:
    - family: MyFlutterApp
      fonts:
        - asset: fonts/MyFlutterApp.ttf
+   - family:  ChickInEgg
+     fonts:
+       - asset: fonts/ChickInEgg.ttf
+
