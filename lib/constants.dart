@@ -27,3 +27,10 @@ const double kIconToFontRatio = 1.35;
 
 const int kFlexRatio1 = 4;
 const int kFlexRatio2 = 15;
+
+const TextStyle kInfoScreenTextStyle = TextStyle(
+  fontFamily: kKosugiMaru,
+  fontSize: kFontSize3,
+  color: kBasicTextColor,
+  height: 1.4,
+);
