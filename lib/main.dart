@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => DateData(),
       child: MaterialApp(
-        theme: ThemeData(),
+        debugShowCheckedModeBanner: false,
         home: TopScreen(),
       ),
     );
